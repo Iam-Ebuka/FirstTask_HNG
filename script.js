@@ -6,12 +6,20 @@ let day = document.getElementById('currentDay').textContent = `Today is ${dayOfW
 
 
  function updateMilliseconds() {
-            const currentTimeInMilliseconds = new Date().getTime();
-            document.getElementById("time").textContent = `Current UTC Milliseconds: ${currentTimeInMilliseconds}`;
+            const currentTime = new Date();
+			const hours = currentTime.getHours();
+			const minutes = currentTime.getMinutes();
+			const seconds = currentTime.getSeconds();
+			const milliseconds = currentTime.getMilliseconds();
+
+			
+			document.getElementById("hour").textContent = ` ${hours}`;
+			document.getElementById("minute").textContent = ` ${minutes}`;
+			document.getElementById("seconds").textContent = ` ${seconds}`;
+			document.getElementById("millisec").textContent = ` ${milliseconds}`;
         }
 
-       
-        setInterval(updateMilliseconds, 1000);
+        setInterval(updateMilliseconds, 1);
         
         
         updateMilliseconds();
